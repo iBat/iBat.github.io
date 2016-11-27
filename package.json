@@ -1,0 +1,31 @@
+{
+  "name": "players-stat-service",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iBat/iBat.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iBat/iBat.github.io/issues"
+  },
+  "homepage": "https://github.com/iBat/iBat.github.io#readme",
+  "dependencies": {
+    "aws-sdk": "^2.7.7",
+    "koa": "^2.0.0",
+    "koa-error": "^2.1.0",
+    "koa-jade-render": "^1.0.0",
+    "koa-router": "^7.0.1",
+    "koa-static": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2017-node7": "^0.4.1"
+  }
+}
