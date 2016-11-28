@@ -1,0 +1,46 @@
+nav.navbar.navbar-light.bg-faded
+    a.navbar-brand(href='#') XVM
+    ul.nav.navbar-nav
+        li.nav-item.active
+            a.nav-link(href='/players') Top players
+        li.nav-item
+            a.nav-link(href='/clans') Top clans
+        li.nav-item
+            a.nav-link(href='#') Бла бла...
+    ul.nav.navbar-nav.float-xs-right
+        li.nav-item.dropdown
+            a#supportedContentDropdown.nav-link.dropdown-toggle(href='#',
+                data-toggle='dropdown',
+                aria-haspopup='true',
+                aria-expanded='false') Realm
+            .dropdown-menu(aria-labelledby='supportedContentDropdown')
+                a.dropdown-item(href='#') [RU] Россия
+                a.dropdown-item(href='#') [NA] America
+                a.dropdown-item(href='#') [EU] Europe
+                a.dropdown-item(href='#') [ASIA] Asia
+                a.dropdown-item(href='#') [KR] 대한민국
+
+//.navbar.navbar-default.topnav.navbar-fixed-top(role='navigation')
+    .container
+        .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href='/')
+                i.fa.fa-cube
+                | Cloud4RPI
+        .collapse.navbar-collapse
+            ul.nav.navbar-nav
+                li
+                    a.b-promo-link(href=docsUrl target='_blank' rel="noopener noreferrer") Docs
+                li
+                    a.b-promo-link(href='/pricing') Pricing
+                li
+                    a.b-promo-link(href=supportUrl target='_blank' rel="noopener noreferrer") Support
+            ul.nav.navbar-nav.navbar-right
+                li(class=title == 'Login' ? 'active' : undefined)
+                    a(href='/auth') Login
+                li(class=title == 'Register' ? 'active' : undefined)
+                    a(href='/auth/signup') Register

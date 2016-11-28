@@ -1,8 +1,8 @@
 import Koa from 'koa';
+import error from 'koa-error';
 import jade from 'koa-jade-render';
 import koaStatic from 'koa-static';
 import path from 'path';
-import error from 'koa-error';
 import routes from './routes';
 
 const app = new Koa();
