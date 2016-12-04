@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    form.form-inline
+        .form-group
+            label(for='exampleInputName2') Clan search
+            input#exampleInputName2.form-control(type='text', placeholder='Type clan title')
+        button.btn.btn-primary(type='submit') Search
+
+    h3 Common
+    .row
+        .col-sm-6 Title
+        .col-sm-6= clan.name
+    .row
+        .col-sm-6 Emblem
+        .col-sm-6
+            img.img-thumbnail(src=clan.emblem)
+    h3 Stats
+    .row
+        .col-sm-6 WN8
+        .col-sm-6= clan.wn8

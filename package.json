@@ -2,10 +2,7 @@
   "name": "players-stat-service",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "bin/www",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iBat/iBat.github.io.git"
@@ -18,14 +15,26 @@
   "homepage": "https://github.com/iBat/iBat.github.io#readme",
   "dependencies": {
     "aws-sdk": "^2.7.7",
+    "dynamoose": "^0.7.0",
     "koa": "^2.0.0",
     "koa-error": "^2.1.0",
     "koa-jade-render": "^1.0.0",
     "koa-router": "^7.0.1",
-    "koa-static": "^2.0.0"
+    "koa-static": "^2.0.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-es2017-node7": "^0.4.1"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib && rm -rf lib/views && cp -r src/views lib/views",
+    "docker:build": "docker build --force-rm -t $npm_package_config_docker_register/web:4 .",
+    "docker:push": "docker push $npm_package_config_docker_register/web:4",
+    "start": "node --harmony bin/www"
+  },
+  "config": {
+    "docker_register": "cloud.modxvm.com:5000"
   }
 }

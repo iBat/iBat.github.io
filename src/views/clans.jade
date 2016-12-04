@@ -1,4 +1,28 @@
 extends layout
 
 block content
-    h1 Bla-bla
+    form.form-inline
+        .form-group
+            label(for='exampleInputName2') Clan search
+            input#exampleInputName2.form-control(type='text', placeholder='Type clan title')
+        button.btn.btn-primary(type='submit') Search
+
+    .row
+        .col-md-6
+            h3 Top 10 clans (WN8)
+            .list-group
+                each clan in top.wn8
+                    a.list-group-item.list-group-item-action(href='/clans/' + clan.id)
+                        span.float-xs-right
+                            span(title='WN8', style='color:#c64cff')= clan.wn8
+                        img.img-thumbnail(src=clan.emblem)
+                        | [#{clan.name}]
+        .col-md-6
+            h3 Top 10 clans (WinRate)
+            .list-group
+                each clan in top.winRate
+                    a.list-group-item.list-group-item-action(href='/clans/' + clan.id)
+                        span.float-xs-right
+                            span(title='WN8', style='color:#c64cff')= clan.wn8
+                        img.img-thumbnail(src=clan.emblem)
+                        | [#{clan.name}]

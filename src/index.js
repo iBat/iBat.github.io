@@ -1,4 +1,5 @@
 // import AWS from 'aws-sdk';
+import dynamoose from 'dynamoose';
 import app from './app';
 import { logError, logInfo } from './utils';
 
@@ -8,39 +9,9 @@ async function main() {
     try {
         logInfo('Booting up');
 
-        /*// DB
+        // DB
         logInfo('Connecting to DB');
-        AWS.config.update({
-            region: 'eu-central-1',
-            endpoint: 'http://localhost:8000'
-        });
-
-        const dynamodb = new AWS.DynamoDB();
-        const params = {
-            TableName : "Players",
-            KeySchema: [
-                { AttributeName: "id", KeyType: "HASH"},  //Partition key
-                // { AttributeName: "title", KeyType: "RANGE" }  //Sort key
-            ],
-            AttributeDefinitions: [
-                { AttributeName: "id", AttributeType: "N" },
-                { AttributeName: "nm", AttributeType: "S" }
-            ],
-            ProvisionedThroughput: {
-                ReadCapacityUnits: 100,
-                WriteCapacityUnits: 10
-            }
-        };
-
-        logInfo('Setting up tables');
-        dynamodb.updateTable(params, function(err, data) {
-            if (err) {
-                console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
-            } else {
-                console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
-            }
-        });
-        app.db = dynamodb;*/
+        dynamoose.local();
 
         // HTTP
         logInfo('Starting http app');

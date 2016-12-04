@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    form.form-inline
+        .form-group
+            label(for='exampleInputName2') Players search
+            input#exampleInputName2.form-control(type='text', placeholder='Type nickname')
+        button.btn.btn-primary(type='submit') Search
+
+    h3 Common
+    .row
+        .col-sm-6 Nickname
+        .col-sm-6= player.nm
+    h3 Stats
+    .row
+        .col-sm-6 Battles
+        .col-sm-6= player.b
+    .row
+        .col-sm-6 WinRate
+        .col-sm-6= (player.w / player.b * 100).toFixed(2) + '%'
+    .row
+        .col-sm-6 WG Rating
+        .col-sm-6= player.wgr
+    .row
+        .col-sm-6 WN8
+        .col-sm-6= player.wn8
+    .row
+        .col-sm-6 Efficiency
+        .col-sm-6= player.e

@@ -1,4 +1,30 @@
 extends layout
 
 block content
-    h1 Bla-bla
+    form.form-inline
+        .form-group
+            label(for='exampleInputName2') Players search
+            input#exampleInputName2.form-control(type='text', placeholder='Type nickname')
+        button.btn.btn-primary(type='submit') Search
+
+    .row
+        .col-md-6
+            h3 Top 10 players (WN8)
+            .list-group
+                each player in top.wn8
+                    a.list-group-item.list-group-item-action(href='/players/' + player.id)
+                        span.float-xs-right
+                            span(title='WN8', style='color:#c64cff')= player.wn8
+                            span(title='Battles count', style='color:#25c2dd')= player.b
+                            span(title='Wins', style='color:#c64cff')= player.w
+                        | #{player.nm}
+        .col-md-6
+            h3 Top 10 players (WinRate)
+            .list-group
+                each player in top.winRate
+                    a.list-group-item.list-group-item-action(href='/players/' + player.id)
+                        span.float-xs-right
+                            span(title='WN8', style='color:#c64cff')= player.wn8
+                            span(title='Battles count', style='color:#25c2dd')= player.b
+                            span(title='Wins', style='color:#c64cff')= player.w
+                        | #{player.nm}
