@@ -30,7 +30,7 @@ spec:
         name: web
     spec:
       containers:
-        - image: localhost:5000/web:4
+        - image: localhost:5000/web:5
           name: web
           env:
             - name: NODE_ENV

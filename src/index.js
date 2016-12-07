@@ -1,7 +1,7 @@
 // import AWS from 'aws-sdk';
 import dynamoose from 'dynamoose';
 import app from './app';
-import { logError, logInfo } from './utils';
+import { initUtils, logError, logInfo } from './utils';
 
 let server = null;
 
@@ -12,6 +12,9 @@ async function main() {
         // DB
         logInfo('Connecting to DB');
         dynamoose.local();
+
+        // other
+        await initUtils();
 
         // HTTP
         logInfo('Starting http app');

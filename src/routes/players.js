@@ -38,37 +38,6 @@ export const topPlayers = [
         "flag": "default"
     },
     {
-        "id": NumberLong("1006970370"),
-        "__v": 2,
-        "st": "ok",
-        "dt": ISODate("2016-11-21T14:27:19.518Z"),
-        "ts": 1479738439518,
-        "cr": 1386469801,
-        "up": 1479709653,
-        "nm": "Everfalling",
-        "wgr": 4155,
-        "lang": "default",
-        "cid": 1000023494,
-        "rnd": {
-            "e": 901,
-            "wn6": 888
-        },
-        "lvl": 6.407973318855193,
-        "b": 13105,
-        "w": 6305,
-        "spo": 16040,
-        "hip": 66,
-        "cap": 14522,
-        "dmg": 8988188,
-        "frg": 8632,
-        "def": 4829,
-        "e": 899,
-        "wn6": 882,
-        "wn8": 911,
-        "flag": "default",
-        "status": 1
-    },
-    {
         "id": NumberLong("1015634"),
         "__v": 2,
         "st": "ok",

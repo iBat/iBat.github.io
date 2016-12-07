@@ -10,19 +10,16 @@ router.get('/', ctx => {
 });
 
 router.get('/players', async(ctx) => {
-    // const topPlayers = await repository.players.getTop();
-
     ctx.render('players', {
         top: {
             wn8: topPlayers,
-            winRate: topPlayers
+            winRate: await repository.players.getTop('wins_ratio')
         }
     });
 });
 
 router.get('/players/:id', async(ctx) => {
-    // const player = await repository.players.byId(ctx.params.id);
-    const player = topPlayers.filter(player => player.id == ctx.params.id)[0];
+    const player = await repository.players.byId(ctx.params.id);
 
     ctx.render('player', { player });
 });
