@@ -30,11 +30,13 @@ spec:
         name: web
     spec:
       containers:
-        - image: localhost:5000/web:5
+        - image: localhost:5000/web:8
           name: web
           env:
             - name: NODE_ENV
-              value: production
+              value: development
+            - name: AWS_REGION
+              value: eu-central-1
           ports:
             - containerPort: 3000
 #---

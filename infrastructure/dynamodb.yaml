@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dynamodb
+  labels:
+    name: web
+spec:
+  type: NodePort
+  ports:
+    - port: 8000
+      nodePort: 30800
+      targetPort: 8000
+  selector:
+    name: dynamodb
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dynamodb-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: dynamodb
+    spec:
+      containers:
+        - image: peopleperhour/dynamodb
+          name: dynamodb
+          ports:
+            - containerPort: 8000
